@@ -7,8 +7,9 @@ import { shuffleDeck } from '../utils';
  */
 export default class Deck {
 	constructor(cards = []) {
-		this.cards = new Set(cards);
-    this.deck = cards.slice();
+    this.cards = new Set(cards);
+    // Initially shuffle the deck
+    this.deck = shuffleDeck(cards.slice());
     this.discardPile = [];
   }
 
@@ -45,7 +46,6 @@ export default class Deck {
 
 		const cards = deck.splice(0, count);
 		discardPile.push(...cards);
-
 		return cards;
 	}
 }
