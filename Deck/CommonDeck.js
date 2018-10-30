@@ -9,10 +9,10 @@ const buildCommonDeck = () => {
 	var cards = [];
 
 	suits.forEach((suit) => cardValues.forEach((val) => {
-    cards.push(new Card(suit, val))
+    cards = [ ...cards, new Card(suit, val) ]
   }));
   // Add Jokers
-  cards = [ ...cards, new Card(Black, Joker), new Card(Red, Joker)]
+  cards = [ ...cards, new Card(Black, Joker), new Card(Red, Joker) ]
 	return cards;
 };
 
